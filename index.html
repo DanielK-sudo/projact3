@@ -56,28 +56,28 @@
                         <div class="slide_card">
                             <h3>regular expression</h3>
                             <p>Простыми словами, регулярное выражение - это набор символов, который задает определенные правила для поиска и сопоставления текста. Вы можете использовать регулярные выражения, чтобы найти определенные строки в тексте, заменить части строки на другие значения или извлечь нужную информацию из текста.</p>
-                            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_expressions" target="_blank">узнать подробнее</a>
+                            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_expressions" target="_blank">Узнать подробнее</a>
                         </div>
                     </div>
                     <div class="slide">
                         <div class="slide_card">
                             <h3>recursion</h3>
                             <p>Простыми словами, рекурсия - это, когда функция делает повторяющиеся вызовы самой себя для решения задачи, пока не достигнет определенного условия выхода из рекурсии.</p>
-                            <a href="https://learn.javascript.ru/recursion" target="_blank">узнать подробнее</a>
+                            <a href="https://learn.javascript.ru/recursion" target="_blank">Узнать подробнее</a>
                         </div>
                     </div>
                     <div class="slide">
                         <div class="slide_card">
                             <h3>json</h3>
                             <p>Простыми словами, JSON - это способ представления данных в виде текста, чтобы они могли быть легко поняты и использованы различными программами. Он использует простые правила для описания объектов и массивов, а также для представления простых типов данных, таких как строки, числа, логические значения и т.д.</p>
-                            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/JSON" target="_blank">узнать подробнее</a>
+                            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/JSON" target="_blank">Узнать подробнее</a>
                         </div>
                     </div>
                     <div class="slide">
                         <div class="slide_card">
                             <h3>event loop</h3>
                             <p>Простыми словами, event loop похож на дежурного, который непрерывно проверяет, произошло ли какое-либо событие, и реагирует на него, когда оно происходит. Он имеет список задач, которые нужно выполнить, и он перебирает этот список событий одно за другим, обрабатывая каждое событие, когда оно наступает.</p>
-                            <a href="https://highload.today/kak-ustroen-event-loop-v-javascript-parallelnaya-model-i-tsikl-sobytij/" target="_blank">узнать подробнее</a>
+                            <a href="https://highload.today/kak-ustroen-event-loop-v-javascript-parallelnaya-model-i-tsikl-sobytij/" target="_blank">Узнать подробнее</a>
                         </div>
                     </div>
                     <button class="btn-slide" id="next">next&gt;</button>
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <div class="botlle">
+    <div class="bottle">
         <div class="container">
             <div class="bottle_inner">
                 <a href="pages/monster.html">
@@ -104,7 +104,7 @@
         <div class="container">
             <h3>Полезный ролик про Event Loop</h3>
             <div class="inner_block_video">
-                <iframe width="80%" height="450" src="https://www.youtube.com/embed/zDlg64fsQow" title="YouTube video player" frameborder="2" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="80%" height="450" src="https://www.youtube.com/embed/zDlg64fsQow" title="YouTube video player" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -124,22 +124,26 @@
     <div class="modal_dialog">
         <div class="modal_content">
             <form action="#">
-                <div class="modal_close">&times;</div>
+                <div class="modal_close">&#10006;</div>
                 <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
-                <input
-                    required
-                    placeholder="Ваше имя"
-                    name="name"
-                    type="text"
-                    class="modal_input"
-                >
-                <input
-                    required
-                    placeholder="Ваш номер телефона"
-                    name="phone"
-                    type="text"
-                    class="modal_input"
-                >
+                <label>
+                    <input
+                        required
+                        placeholder="Ваше имя"
+                        name="name"
+                        type="text"
+                        class="modal_input"
+                    >
+                </label>
+                <label>
+                    <input
+                        required
+                        placeholder="Ваш номер телефона"
+                        name="phone"
+                        type="text"
+                        class="modal_input"
+                    >
+                </label>
                 <button class="btn btn_dark btn_min">Перезвонить мне</button>
             </form>
         </div>

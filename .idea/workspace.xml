@@ -5,43 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="733efc4d-a2ed-4b03-b37a-512a081ff1bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project_program_for_students.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/any.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/characters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/home_works.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/home_works.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/any.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/converter.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/persons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/home_works.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/home_works.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/lesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lesson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home_works.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home_works.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/lessons.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/lessons.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/monster.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/monster.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/project_program_for_students.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/css/card_css.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/css/core.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/css/home_works.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/css/lessons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/css/monster.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/data/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/js/card_js.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/js/home_works.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/js/lesson.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/js/modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/js/monster.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pages/card_html.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pages/home_works.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pages/lessons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pages/monster.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/server.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +25,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -60,26 +38,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/NurDinBuy/OneDrive/Рабочий стол/groups/45-01/lesson2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;&lt;unknown&gt;&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/front-end/project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-WS-242.21829.149" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
       </set>
     </attachedChunks>
   </component>
@@ -130,11 +109,52 @@
       <workItem from="1732532000476" duration="622000" />
       <workItem from="1733135781586" duration="1605000" />
       <workItem from="1735812739155" duration="4510000" />
-      <workItem from="1736158696260" duration="3487000" />
+      <workItem from="1736158696260" duration="6722000" />
+      <workItem from="1736279894982" duration="35000" />
+      <workItem from="1736418492970" duration="6762000" />
+      <workItem from="1736765092573" duration="4836000" />
+      <workItem from="1736828905388" duration="12000" />
+      <workItem from="1737023782266" duration="7923000" />
+      <workItem from="1737104454241" duration="15000" />
+      <workItem from="1737373366999" duration="2169000" />
+      <workItem from="1737627609199" duration="14042000" />
+      <workItem from="1737975012465" duration="763000" />
+      <workItem from="1738055601066" duration="5000" />
+      <workItem from="1738578505166" duration="4187000" />
+      <workItem from="1738838839047" duration="2543000" />
+      <workItem from="1738846717908" duration="19000" />
+      <workItem from="1739185013195" duration="4016000" />
+      <workItem from="1739444246366" duration="1890000" />
+      <workItem from="1739788855400" duration="4235000" />
+      <workItem from="1739793198121" duration="1146000" />
+      <workItem from="1740048901222" duration="2011000" />
+      <workItem from="1740394776240" duration="5444000" />
+      <workItem from="1743408769307" duration="349000" />
+      <workItem from="1743416990056" duration="7372000" />
+      <workItem from="1743677603952" duration="4925000" />
+      <workItem from="1743835909620" duration="28000" />
+      <workItem from="1744022783004" duration="7241000" />
+      <workItem from="1744282388662" duration="3824000" />
+      <workItem from="1744628334613" duration="3311000" />
+      <workItem from="1744886826414" duration="4562000" />
+      <workItem from="1745233108004" duration="9643000" />
+      <workItem from="1749377756493" duration="3555000" />
+      <workItem from="1749381628576" duration="107000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

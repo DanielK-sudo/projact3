@@ -219,15 +219,18 @@
     color: white;
 }
 
-.modal_input, .btn_min {
+.modal_content label, .btn_min {
     width: 100% !important;
     margin-top: 10px;
 }
 
+.modal_content input {
+    width: 100%;
+}
 
 /*-------BOTTLE-------*/
 
-.botlle {
+.bottle {
     background: black;
     padding: 100px 0;
 }
@@ -247,7 +250,6 @@
     border: 8px solid transparent;
     animation: animate 5s linear infinite;
     transform-origin: bottom center;
-    animation-play-state: run;
 }
 
 @keyframes animate {

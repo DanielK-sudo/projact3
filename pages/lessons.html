@@ -66,7 +66,7 @@
                         <p>classList в JavaScript - это свойство, которое позволяет нам работать с классами элемента
                             HTML. С помощью classList мы можем добавлять, удалять или проверять наличие классов у
                             элемента. Допустим, у нас есть элемент на веб-странице, и мы хотим изменить его классы с
-                            помощью JavaScript. Вместо того, чтобы обращаться напрямую к атрибуту class, мы можем
+                            помощью JavaScript. Вместо того чтобы обращаться напрямую к атрибуту class, мы можем
                             использовать свойство classList этого элемента. </p>
                     </div>
                     <div class="tab_content_block">
@@ -136,7 +136,9 @@
             <h3>WEATHER</h3>
             <div class="inner_weather">
                 <div>
-                    <input type="text" class="cityName" placeholder="Найти погоду в...">
+                    <label>
+                        <input type="text" class="cityName" placeholder="Найти погоду в...">
+                    </label>
                     <button class="btn" id="search">search</button>
                 </div>
                 <div>
@@ -165,8 +167,12 @@
             <form action="#">
                 <div class="modal_close">&#10006;</div>
                 <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
-                <input required placeholder="Ваше имя" name="name" type="text" class="modal_input">
-                <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal_input">
+                <label>
+                    <input required placeholder="Ваше имя" name="name" type="text" class="modal_input">
+                </label>
+                <label>
+                    <input required placeholder="Ваш номер телефона" name="phone" class="modal_input">
+                </label>
                 <button class="btn btn_dark btn_min">Перезвонить мне</button>
             </form>
         </div>
