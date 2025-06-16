@@ -1,3 +1,29 @@
+//CHECK GMAIL
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const gmailInput = document.getElementById('gmail_input');
+    const gmailButton = document.getElementById('gmail_button');
+    const gmailResult = document.getElementById('gmail_result');
+
+    if (gmailInput && gmailButton && gmailResult) {
+        const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+        gmailButton.addEventListener('click', () => {
+            const email = gmailInput.value.trim();
+            if (gmailRegex.test(email)) {
+                gmailResult.textContent = 'Valid Gmail!';
+                gmailResult.style.color = 'green';
+            } else {
+                gmailResult.textContent = 'Invalid Gmail!';
+                gmailResult.style.color = 'red';
+            }
+        });
+    }
+});
+
+
 //MOVE BLOCK
 
 
@@ -105,3 +131,48 @@ function resetCounter() {
 startBtn.addEventListener('click', startCounter);
 stopBtn.addEventListener('click', stopCounter);
 resetBtn.addEventListener('click', resetCounter);
+
+
+
+// CHARACTERS
+
+document.addEventListener('DOMContentLoaded', () => {
+    const charactersList = document.querySelector('.characters-list');
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '../data/person.json', true); // исправлено здесь
+    xhr.responseType = 'json';
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const persons = xhr.response;
+            console.log('Данные из person.json:', persons);
+
+            let html = '';
+
+            persons.forEach(person => {
+                html += `
+                    <div class="character-card">
+                        <div class="character-photo">
+                            <img src="${person.person_photo}" alt="${person.name}">
+                        </div>
+                        <h3>${person.name}</h3>
+                        <p>Возраст: ${person.age}</p>
+                        <p>Меч: ${person.sword}</p>
+                    </div>
+                `;
+            });
+
+            charactersList.innerHTML = html;
+
+        } else {
+            console.error('Ошибка загрузки person.json:', xhr.status);
+        }
+    };
+
+    xhr.onerror = function () {
+        console.error('Ошибка запроса');
+    };
+
+    xhr.send();
+});

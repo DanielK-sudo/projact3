@@ -228,3 +228,6 @@
     height: 100%;
     object-fit: cover;
 }
+p {
+    color: white;
+}
