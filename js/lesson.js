@@ -65,3 +65,60 @@ document.addEventListener("DOMContentLoaded", () => {
     showTabContent();
     startAutoSlider();
 });
+
+
+// CONVERTER
+
+
+const somInput = document.getElementById('som');
+const usdInput = document.getElementById('usd');
+const eurInput = document.getElementById('eur');
+
+const converter = (element, target1, target2) => {
+    element.oninput = () => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '../data/converter.json');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send();
+
+        xhr.onload = () => {
+            const data = JSON.parse(xhr.response);
+
+            const usdRate = parseFloat(data.usd);
+            const eurRate = parseFloat(data.eur);
+
+            const somRate = 1;
+            const value = parseFloat(element.value);
+
+            if (isNaN(value)) {
+                target1.value = '';
+                target2.value = '';
+                return;
+            }
+
+            if (element.id === 'som') {
+                target1.value = (value / usdRate).toFixed(2);
+                target2.value = (value / eurRate).toFixed(2);
+            } else if (element.id === 'usd') {
+                const inSom = value * usdRate;
+                target1.value = inSom.toFixed(2);
+                target2.value = (inSom / eurRate).toFixed(2);
+            } else if (element.id === 'eur') {
+                const inSom = value * eurRate;
+                target1.value = inSom.toFixed(2);
+                target2.value = (inSom / usdRate).toFixed(2);
+            }
+
+            if (element.value === '') {
+                target1.value = '';
+                target2.value = '';
+            }
+        };
+    };
+};
+
+converter(somInput, usdInput, eurInput);
+converter(usdInput, somInput, eurInput);
+converter(eurInput, somInput, usdInput);
+
+
