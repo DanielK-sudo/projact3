@@ -122,3 +122,50 @@ converter(usdInput, somInput, eurInput);
 converter(eurInput, somInput, usdInput);
 
 
+
+//CARD SWITCHER
+
+const cardBlock = document.querySelector('.card');
+const btnNext = document.querySelector('#btn-next');
+const btnPrev = document.querySelector('#btn-prev');
+let cardId = 1;
+
+function fetchCard(id) {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            cardBlock.innerHTML = `
+                <p>${data.title}</p>
+                <p style="color: ${data.completed ? 'green' : 'red'};">
+                  ${data.completed}
+                </p>
+                <span>${data.id}</span>
+            `;
+        })
+        .catch(err => {
+            console.error('Ошибка загрузки:', err);
+            cardBlock.innerHTML = '<p style="color:red;">Ошибка загрузки</p>';
+        });
+}
+
+fetchCard(cardId);
+
+btnNext.onclick = () => {
+    cardId = cardId >= 200 ? 1 : cardId + 1;
+    fetchCard(cardId);
+};
+
+btnPrev.onclick = () => {
+    cardId = cardId <= 1 ? 200 : cardId - 1;
+    fetchCard(cardId);
+};
+
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => {
+        console.log('(второе задание):', data);
+    })
+    .catch(error => {
+        console.error('Ошибка при получении всех постов:', error);
+    });
