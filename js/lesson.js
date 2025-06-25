@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 
-//SLAIDER BLOCK
 
+//SLAIDER BLOCK
 
 document.addEventListener("DOMContentLoaded", () => {
     const tabContentBlocks = document.querySelectorAll('.tab_content_block');
@@ -69,25 +69,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // CONVERTER
 
-
 const somInput = document.getElementById('som');
 const usdInput = document.getElementById('usd');
 const eurInput = document.getElementById('eur');
 
 const converter = (element, target1, target2) => {
-    element.oninput = () => {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', '../data/converter.json');
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send();
+    element.oninput = async () => {
+        try {
+            const response = await fetch('../data/converter.json');
+            if (!response.ok) {
+                throw new Error('Ошибка при загрузке JSON');
+            }
 
-        xhr.onload = () => {
-            const data = JSON.parse(xhr.response);
+            const data = await response.json();
 
             const usdRate = parseFloat(data.usd);
             const eurRate = parseFloat(data.eur);
-
-            const somRate = 1;
             const value = parseFloat(element.value);
 
             if (isNaN(value)) {
@@ -113,14 +110,17 @@ const converter = (element, target1, target2) => {
                 target1.value = '';
                 target2.value = '';
             }
-        };
+        } catch (error) {
+            console.error('Ошибка конвертации:', error);
+            target1.value = '';
+            target2.value = '';
+        }
     };
 };
 
 converter(somInput, usdInput, eurInput);
 converter(usdInput, somInput, eurInput);
 converter(eurInput, somInput, usdInput);
-
 
 
 //CARD SWITCHER
@@ -130,23 +130,25 @@ const btnNext = document.querySelector('#btn-next');
 const btnPrev = document.querySelector('#btn-prev');
 let cardId = 1;
 
-function fetchCard(id) {
-    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
-        .then(res => res.json())
-        .then(data => {
-            cardBlock.innerHTML = `
-                <p>${data.title}</p>
-                <p style="color: ${data.completed ? 'green' : 'red'};">
-                  ${data.completed}
-                </p>
-                <span>${data.id}</span>
-            `;
-        })
-        .catch(err => {
-            console.error('Ошибка загрузки:', err);
-            cardBlock.innerHTML = '<p style="color:red;">Ошибка загрузки</p>';
-        });
-}
+const fetchCard = async (id) => {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
+        if (!response.ok) {
+            throw new Error('Ошибка при получении данных');
+        }
+        const data = await response.json();
+        cardBlock.innerHTML = `
+            <p>${data.title}</p>
+            <p style="color: ${data.completed ? 'green' : 'red'};">
+                ${data.completed}
+            </p>
+            <span>${data.id}</span>
+        `;
+    } catch (error) {
+        console.error('Ошибка загрузки карточки:', error);
+        cardBlock.innerHTML = '<p style="color:red;">Ошибка загрузки</p>';
+    }
+};
 
 fetchCard(cardId);
 
@@ -161,11 +163,54 @@ btnPrev.onclick = () => {
 };
 
 
-fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json())
-    .then(data => {
+//второе задание
+
+const fetchAllPosts = async () => {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        if (!response.ok) {
+            throw new Error('Ошибка при получении постов');
+        }
+        const data = await response.json();
         console.log('(второе задание):', data);
-    })
-    .catch(error => {
+    } catch (error) {
         console.error('Ошибка при получении всех постов:', error);
-    });
+    }
+};
+
+fetchAllPosts();
+
+
+//WEATHER
+
+const searchInput = document.querySelector('.cityName');
+const searchbutton = document.querySelector('#search');
+const city = document.querySelector('.city');
+const temp = document.querySelector('.temp');
+const QPI = 'https://api.openweathermap.org/data/2.5/weather';
+const API_KEY = 'e417df62e04d3b1b111abeab19cea714';
+
+searchbutton.onclick = async () => {
+    if (searchInput.value.trim() === '') {
+        city.innerHTML = 'введите названия города';
+        temp.innerHTML = '';
+        return;
+    }
+
+    try {
+        const response = await fetch(`${QPI}?q=${searchInput.value}&units=metric&lang=ru&appid=${API_KEY}`);
+        if (!response.ok) {
+            throw new Error('Город не найден');
+        }
+
+        const data = await response.json();
+        city.innerHTML = data.name;
+        temp.innerHTML = Math.round(data.main.temp) + '&deg;C';
+    } catch (error) {
+        console.error('Ошибка получения погоды:', error);
+        city.innerHTML = 'Ошибка загрузки';
+        temp.innerHTML = '';
+    }
+
+    searchInput.value = '';
+};

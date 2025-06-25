@@ -1,7 +1,5 @@
 //CHECK GMAIL
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const gmailInput = document.getElementById('gmail_input');
     const gmailButton = document.getElementById('gmail_button');
@@ -25,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //MOVE BLOCK
-
 
 const parentBlock = document.querySelector('.parent_block');
 const childBlock = document.querySelector('.child_block');
@@ -82,27 +79,22 @@ moveBlock();
 
 //CLOCk
 
-
 const secondsDisplay = document.getElementById('seconds');
 const startBtn = document.getElementById('start');
 const stopBtn = document.getElementById('stop');
 const resetBtn = document.getElementById('reset');
 
-
 let startTime = 0;
 let elapsedTime = 0;
 let intervalId = null;
-
 
 function updateDisplay() {
     const time = elapsedTime + (intervalId ? Date.now() - startTime : 0);
     const seconds = Math.floor(time / 1000);
     const milliseconds = time % 1000;
 
-
     secondsDisplay.textContent = `${seconds}.${milliseconds.toString().padStart(3, '0')}`;
 }
-
 
 function startCounter() {
     if (intervalId) return;
@@ -110,14 +102,12 @@ function startCounter() {
     intervalId = setInterval(updateDisplay, 10);
 }
 
-
 function stopCounter() {
     if (!intervalId) return;
     elapsedTime += Date.now() - startTime;
     clearInterval(intervalId);
     intervalId = null;
 }
-
 
 function resetCounter() {
     clearInterval(intervalId);
@@ -127,11 +117,9 @@ function resetCounter() {
     secondsDisplay.textContent = '0.000';
 }
 
-
 startBtn.addEventListener('click', startCounter);
 stopBtn.addEventListener('click', stopCounter);
 resetBtn.addEventListener('click', resetCounter);
-
 
 
 // CHARACTERS
@@ -139,13 +127,13 @@ resetBtn.addEventListener('click', resetCounter);
 document.addEventListener('DOMContentLoaded', () => {
     const charactersList = document.querySelector('.characters-list');
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', '../data/person.json', true); // исправлено здесь
-    xhr.responseType = 'json';
-
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            const persons = xhr.response;
+    const fetchCharacters = async () => {
+        try {
+            const response = await fetch('../data/person.json');
+            if (!response.ok) {
+                throw new Error(`Ошибка загрузки person.json: ${response.status}`);
+            }
+            const persons = await response.json();
             console.log('Данные из person.json:', persons);
 
             let html = '';
@@ -165,14 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             charactersList.innerHTML = html;
 
-        } else {
-            console.error('Ошибка загрузки person.json:', xhr.status);
+        } catch (error) {
+            console.error('Ошибка запроса:', error);
         }
     };
 
-    xhr.onerror = function () {
-        console.error('Ошибка запроса');
-    };
-
-    xhr.send();
+    fetchCharacters();
 });
